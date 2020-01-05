@@ -1,0 +1,26 @@
+
+
+<%-include("partials/header.ejs")%>
+
+<h1>HOME</h1>
+
+<form action="/delete" method="POST">
+
+ <% data.forEach(function(ip){%>
+ <hr>
+
+       <%var y=ip.postdata;%>
+      
+ 
+       <h2><i class="fas fa-trash-alt bin icon" style="font-size:25px;">  <button type="submit" name="button" value="<%=ip.id%>"  class="btn btn-danger">Delete</button></i><%=ip.titledata%></h2>
+    <p><%=y+"...."%><a href="http://localhost:3000/post/<%= ip.titledata%>" >Read more</a></p>
+  
+
+ <%});%>
+</form>
+
+  
+
+  
+
+<%-include("partials/footer.ejs")%>
